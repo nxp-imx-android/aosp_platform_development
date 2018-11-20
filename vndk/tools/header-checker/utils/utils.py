@@ -194,7 +194,7 @@ def get_build_vars_for_product(names, product=None):
         return None
     cmd = ''
     if product is not None:
-        cmd += 'source build/envsetup.sh>/dev/null && lunch>/dev/null ' + product + '&&'
+        cmd += 'source build/envsetup.sh>/dev/null && lunch>/dev/null ' + product + '||'
     cmd += ' build/soong/soong_ui.bash --dumpvars-mode -vars \"'
     for name in names:
         cmd += name + ' '
