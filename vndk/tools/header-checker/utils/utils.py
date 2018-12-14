@@ -133,7 +133,7 @@ def make_targets(targets, product):
     for target in targets:
         make_cmd.append(target)
     make_cmd.append('TARGET_PRODUCT=' + product)
-    subprocess.check_call(make_cmd, cwd=AOSP_DIR, stdout=subprocess.DEVNULL,
+    subprocess.call(make_cmd, cwd=AOSP_DIR, stdout=subprocess.DEVNULL,
                           stderr=subprocess.STDOUT)
 
 def make_libraries(libs, product, llndk_mode):
